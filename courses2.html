@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="new.css"/>
+<title>Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="newcss.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    <script type="text/javascript" src="LoginScript.js"></script>
+
+</head>
+    <body>
+    <script>
+    getcourses();
+        getCurrentUser();
+    </script>
+    	<div id="outer">
+            <div id="logo1">
+            <img id="engr" src="scuseal.jpg">
+                <a href=""><img id="choose" src="ChooseWisely.png"></a>
+                </div>
+            <div id="header">
+                <div id="ttl">
+                <h1 id="maintitle">Select course to review</h1>
+                    </div>
+                <div id="login" style="float : right;">
+                    <h3 id="currentuser"></h3>
+                    <button id="myButton" type="button" class="btn btn-danger" >Logout</button>
+                    <script type="text/javascript">
+                        document.getElementById("myButton").onclick = function () {
+                            location.href = "SignUpPage.html";
+                        };
+                    </script>
+
+                </div>
+    		</div>
+            <div id="midbody" style="display: inline-block">
+    		    <div id="inner" style="float: left;">
+    			        <h1 id="coursetitle">COURSES</h1>
+                        <ul id = "coursenames">
+    				<!--<li><a href="">Introduction to Programming(coen 10)</a></li>
+					<li><a href="">Abstr Data Types & StructuresLab(coen 12)</a></li>
+					<li><a href="">Logic Design Lab(coen 21)</a></li>
+					<li><a href="">Applied Programming in C(coen 44)</a></li>
+					<li><a href="">Intro to Web Technologies(coen 60)</a></li>
+					<li><a href="">Advanced Logic Design(coen 127)</a></li>
+					<li><a href="">Computer Graphics System(coen 146)
+					</a></li>
+					<li><a href="">Web Programming I(coen 161)</a>
+					</li>
+					<li><a href="">Intro: 3D Animation & Modeling(coen 165)</a></li>
+					<li><a href="">Software Engineering(coen 174)</a>
+					</li>-->
+    			</ul>
+
+    		    </div>
+                <div id = "reviews" style="float: right">
+                        <div id="facts">
+                    <h1 style="color: #566673;">About Santa Clara School Of Engineering</h1>
+                    "The School of Engineering provides an outstanding theoretical and practical experience for both undergraduate and graduate students. Distinguished faculty, academic excellence, personal attention, and a culture of social responsibility are hallmarks of our program."
+                        </div>
+                </div>
+         </div>
+            <div id="selectedcourse">
+                <h1 id="courseselected">
+                    Computer Architecture
+                </h1>
+            </div>
+
+
+            <div id="feedback">
+
+
+            </div>
+            <script>
+                $('#feedback').hide();
+                $('#selectedcourse').hide();
+            </script>
+            <div id = "postcomdiv">
+                Your Feedback matters<br>
+                <input type="text" name="postcomment" id="postcomment" class="comment" placeholder="Post a comment">
+                <input type="submit" id="submit2" name="submitbtn">
+            </div>
+            <script>
+                $("#postcomdiv").hide();
+                $("#submit2").click(function(){
+
+                    var comment = $("#postcomment").val();
+                    $("#postcomment").val("");
+
+                    if(comment == "")
+                    {
+                        alert("field empty");
+                    }
+
+                    else
+                    {
+// AJAX Code To Submit Form.
+                        var SaveComment = Parse.Object.extend("comments");
+                        var savecomments = new SaveComment();
+
+                        savecomments.set("name", getUser());
+                        savecomments.set("comments", comment);
+                        savecomments.set("course", returnCourse());
+
+
+                        savecomments.save(null, {
+                            success: function(gameScore) {
+                                // Execute any logic that should take place after the object is saved.
+                                if(flag===0){
+
+                                    $("#feedback").empty();
+                                    flag=1;
+                                }
+                                $("#feedback").append('<div class="comment"><h3 class="name">'+getUser()+'</h3><p class="commentbody">'+comment+'</p></div>');
+                            },
+                            error: function(gameScore, error) {
+                                // Execute any logic that should take place if the save fails.
+                                // error is a Parse.Error with an error code and message.
+                                alert('Failed to create new object, with error code: ' + error.message);
+                            }
+                        });
+                    }
+
+                });
+
+
+            </script>
+
+
+    </div>
+    <div id="footer">
+        <h4> Copyright &#169; Designed by ChooseWisely <a href="google.com">Alpha</a> | <a href="google.com">Beta</a></h4>
+    </div>
+
+    </body>
+
+    </html>

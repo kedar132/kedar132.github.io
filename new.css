@@ -1,0 +1,182 @@
+html{
+    background: url("geometry_@2X.png");
+
+}
+body{
+    font-family: 'Titillium Web', sans-serif;
+
+
+}
+#outer{
+	/*margin: 10%;
+	  background-color: rgba(200, 200, 200, 0.5);
+	  float: left;
+  margin: 7%;
+  width: 87%;*/
+    margin: 5%;
+    width: 90%;
+    background-color:rgba(200, 200, 200, 0.5);
+    font-family: 'Titillium Web', sans-serif;
+    display: inline-block;
+
+}
+#header{
+	  float: left;
+  width: 100%;
+  /*: 2%;*/
+    display: inline-block;
+    float: left;
+    margin: 0;
+    margin-top: 2%;
+    text-align: center
+
+}
+#choose{
+    width:25%;
+    height: 25%;
+    padding-top: 1%;
+	float: left;
+}
+#engr{
+	float: right;
+    width: 101px;
+    margin: 2%;
+
+}
+#seal{
+	float: right;
+	width: 6%;
+}
+#reviews{
+    width: 60%;
+    padding: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color:rgba(200, 200, 200, 0.5);
+
+}
+#inner{
+	  background-color: rgba(150, 150, 150, 0.5);
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 150%;
+    width: 27%;
+  float: left;
+
+
+    display: inline-block;
+}
+	
+
+
+div {
+    margin: 20px;
+}
+
+ul {
+    margin-left: 0%;
+    margin-right: 0%;
+    list-style-type: none;
+    width: 100%;
+    padding-left: 0%;
+
+}
+#coursetitle{
+   text-align: center;
+}
+
+
+
+#maintitle{
+    margin-left: 30%;
+    font-size: 400%;
+    color: #0c4680;
+    margin: 0;
+    float: right;
+
+}
+
+li p {
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+    padding: 3%;
+    overflow: auto;
+    border-top:1px solid #000000 ;
+
+}
+
+li:hover {
+    background: #eee;
+    cursor: pointer;
+}
+#facts{
+    color: #999999;
+    font-family:'Lobster', cursive;
+    font-size: 200%;
+
+}
+#feedback{
+    margin: 2%;
+    background-color:rgba(200, 200, 200, 0.5);
+    width: 86%;
+    padding: 4%;
+
+
+}
+#selectedcourse{
+    margin: 2%;
+    background-color:rgba(200, 200, 200, 0.5);
+    width: 86%;
+    padding: 4%;
+}
+.comment{
+    background-color:rgba(150, 150, 150, 0.5);;
+    width: 80%;
+    align-content: center;
+    border: 1px solid #000000;
+    margin: 2%;
+    padding: 2%;
+}
+#postcomment{
+    margin: 2%;
+    background-color:rgba(200, 200, 200, 0.5);
+    width: 86%;
+    padding: 4%;
+
+
+}
+#logo1{
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+#ttl{
+    width:61%;
+    float: left;
+    margin-left: 6%;
+    padding-top: 1%;
+    margin-top: 0;
+    padding-top: 0;
+    }
+#login{
+
+    float: right;
+    width: 50%;
+    padding-left: 34%;
+    float: right;
+    margin:0;
+}
+
+#myButton{
+    float: right;
+    margin-right: 19%;
+
+}
+#footer{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 2%;
+    background-color:rgba(200, 200, 200, 0.5);
+}

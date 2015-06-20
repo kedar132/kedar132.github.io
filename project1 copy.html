@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style>
+        /* --- Container configuration ---------------------------------------------------------- */
+        .viewport {
+            border: 3px solid #eee;
+            float: left;
+            height: 299px;
+            margin: 0 9px 9px 0;
+            overflow: hidden;
+            position: relative;
+            width: 450px;
+        }
+
+        /* This is so that the 2nd thumbnail in each row fits snugly. You will want to add a similar
+           class to the last thumbnail in each row to get rid of the margin-right. */
+        .no-margin {
+            margin-right: 0;
+        }
+
+        /* --- Link configuration that contains the image and label ----------------------------- */
+        .viewport a {
+            display: block;
+            position: relative;
+        }
+
+        .viewport a img {
+            height: 332px;
+            left: -20px;
+            position: relative;
+            top: -20px;
+            width: 500px;
+        }
+
+        /* --- Label configuration -------------------------------------------------------------- */
+        .viewport a span {
+            display: none;
+            font-size: 3.0em;
+            font-weight: bold;
+            height: 100%;
+            padding-top: 120px;
+            position: absolute;
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+            z-index: 100;
+        }
+        .viewport a span em {
+            display: block;
+            font-size: 0.45em;
+            font-weight: normal;
+        }
+
+        /* --- Dark hover background ------------------------------------------------------------ */
+        .dark-background {
+            background-color: rgba(15, 15, 15, 0.6);
+            color: #fff;
+            text-shadow: #000 0px 0px 20px;
+        }
+        .dark-background em {
+            color: #ccc;
+        }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="demo1.css"/>
+    <title>Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    <script type="text/javascript" src="LoginScript.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.viewport').mouseenter(function(e) {
+                $(this).children('a').children('img').animate({ height: '299', left: '0', top: '0', width: '450'}, 100);
+                $(this).children('a').children('span').fadeIn(200);
+            }).mouseleave(function(e) {
+                $(this).children('a').children('img').animate({ height: '332', left: '-20', top: '-20', width: '500'}, 100);
+                $(this).children('a').children('span').fadeOut(200);
+            });
+        });
+    </script>
+</head>
+<script>
+    $( document ).ready(function() {
+        getCurrentUser();
+    });
+</script>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="main">
+    <div id="logo">
+        <img src="ChooseWisely.png">
+    </div>
+    <div id="name">
+        <h1 id="maintitle">Select your School</h1>
+        </div>
+    <div id="login">
+        <h3 id="currentuser"></h3>
+
+        <button id="myButton" type="button" class="btn btn-danger" >Logout</button>
+        <script type="text/javascript">
+           document.getElementById("myButton").onclick = function () {
+                location.href = "SignUpPage.html";
+            };
+        </script>
+    </div>
+</div>
+
+
+<div id="outer">
+    <div class="viewport" onclick="displayEngineeringCourses()">
+        <a href="courses2.html">
+            <span class="dark-background">School of Engineering <em>Bannan Engineering Building</em></span>
+            <img src="http://images.businessweek.com/bschools/images/bschools/profiles/2012/2099756/405x225.jpg" />
+        </a>
+
+
+
+    </div>
+    <div class="viewport" style="margin-left:30%;">
+        <a id="what">
+            <span class="dark-background">School of Buisiness <em>Leavy School of Buisiness</em></span>
+            <img src="http://devcon-const.com/wp-content/uploads/2014/03/SCU-Locatelli1.jpg" alt="Northern Saw-Whet Owl" />
+        </a>
+    </div>
+
+    <div class="viewport">
+        <a>
+            <span class="dark-background">School of Arts <em>Locatelli</em></span>
+            <img src="http://www.bararch.com/system/uploads/project_image/image/1647/exterior_-med.jpg" />
+        </a>
+
+</div>
+    <div class="viewport" style="margin-left:30%;">
+        <a>
+            <span class="dark-background">School of Law <em>Donald Poldem</em></span>
+            <img src="http://devcon-const.com/wp-content/uploads/2014/03/SCU-Admissions1.jpg" alt="Northern Saw-Whet Owl" />
+        </a>
+    </div>
+    </div>
+
+
+<div id="my">
+    <div id="my1">
+    <div class="fb-post" data-href="https://www.facebook.com/choosewiselyscu/photos/a.291381414319531.1073741825.291381337652872/291381420986197/?type=1&amp;theater" data-width="300"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/choosewiselyscu/photos/a.291381414319531.1073741825.291381337652872/291381420986197/?type=1">Posted by <a href="https://www.facebook.com/choosewiselyscu">ChooseWiselyscu</a> on <a href="https://www.facebook.com/choosewiselyscu/photos/a.291381414319531.1073741825.291381337652872/291381420986197/?type=1">Saturday, May 30, 2015</a></blockquote></div></div></br>
+    <div class="fb-like" style="  width: 99px;overflow-x: auto;" data-href="https://www.facebook.com/choosewiselyscu" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    </br>
+    <div class="fb-comments" data-href="https://www.facebook.com/choosewiselyscu/photos/a.291381414319531.1073741825.291381337652872/291381420986197/?type=1&amp;theater" data-width="300" data-numposts="1" data-colorscheme="light"></div>
+</div>
+    </div>
+<div id="twt">
+    <div id="twt1">
+    <a class="twitter-timeline" href="https://twitter.com/SantaClaraUniv" data-widget-id="604989335914446848">Tweets by @SantaClaraUniv</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+    </div>
+<div id="footer">
+    <h4> Copyright &#169; Designed by ChooseWisely <a href="google.com">Alpha</a> | <a href="google.com">Beta</a></h4>
+</div>
+
+</body>
+</html>
